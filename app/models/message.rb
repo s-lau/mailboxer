@@ -10,8 +10,6 @@ class Message < Notification
     where(:conversation_id => conversation.id)
   }
 
-  mount_uploader :attachment, AttachmentUploader
-
   include Concerns::ConfigurableMailer
 
   class << self
