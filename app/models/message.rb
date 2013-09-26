@@ -1,4 +1,6 @@
-class Message < Notification
+require 'notification'
+
+class Message < MailboxerNotification
   attr_accessible :attachment if Mailboxer.protected_attributes?
 
   belongs_to :conversation, :validate => true, :autosave => true

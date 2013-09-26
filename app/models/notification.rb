@@ -195,3 +195,6 @@ class Notification < ActiveRecord::Base
     notified_object
   end
 end
+
+MailboxerNotification = Notification
+

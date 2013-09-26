@@ -1,7 +1,9 @@
+require 'notification'
+
 class Receipt < ActiveRecord::Base
   attr_accessible :trashed, :is_read, :deleted if Mailboxer.protected_attributes?
 
-  belongs_to :notification, :validate => true, :autosave => true
+  belongs_to :notification, :validate => true, :autosave => true, :class_name => '::MailboxerNotification'
   belongs_to :receiver, :polymorphic => :true
   belongs_to :message, :foreign_key => "notification_id"
 
